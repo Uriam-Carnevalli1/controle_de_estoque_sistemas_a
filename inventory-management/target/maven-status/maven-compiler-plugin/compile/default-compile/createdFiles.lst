@@ -1,0 +1,6 @@
+estoque\model\Fornecedor.class
+estoque\model\Funcionario.class
+estoque\model\Produto.class
+estoque\InventoryManagement.class
+estoque\model\EntradaEstoque.class
+estoque\testes\TesteGeral.class
