@@ -1,7 +1,7 @@
 C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\InventoryManagement.java
-C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\model\EntradaEstoque.java
-C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\model\Fornecedor.java
-C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\model\Funcionario.java
-C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\model\Produto.java
 C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\testes\TestaConexao.java
 C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\estoque\testes\TesteGeral.java
+C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\negocio\EntradaEstoque.java
+C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\negocio\Fornecedor.java
+C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\negocio\Funcionario.java
+C:\Users\arthu\meusprojetos\facul\controle_de_estoque_sistemas_a\inventory-management\src\main\java\negocio\Produto.java

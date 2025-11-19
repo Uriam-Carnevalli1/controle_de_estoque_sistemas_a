@@ -1,7 +1,7 @@
-estoque\model\Funcionario.class
-estoque\model\Produto.class
-estoque\model\EntradaEstoque.class
+negocio\EntradaEstoque.class
+negocio\Fornecedor.class
 estoque\testes\TesteGeral.class
-estoque\model\Fornecedor.class
+negocio\Funcionario.class
+negocio\Produto.class
 estoque\InventoryManagement.class
 estoque\testes\TestaConexao.class
