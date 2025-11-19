@@ -8,10 +8,10 @@ package estoque.testes;
  *
  * @author arthurce
  */
-import estoque.model.Produto;
-import estoque.model.Fornecedor;
-import estoque.model.Funcionario;
-import estoque.model.EntradaEstoque;
+import negocio.Produto;
+import negocio.Fornecedor;
+import negocio.Funcionario;
+import negocio.EntradaEstoque;
 
 import java.time.LocalDateTime;
 
