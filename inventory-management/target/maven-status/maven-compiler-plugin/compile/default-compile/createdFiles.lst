@@ -1,8 +1,10 @@
 negocio\EntradaEstoque.class
 negocio\Fornecedor.class
+apresentacao\TelaCadastrarProduto.class
 estoque\testes\TesteGeral.class
 apresentacao\TelaLogin.class
 apresentacao\TelaCadastro.class
+apresentacao\TelaMenu.class
 negocio\Funcionario.class
 negocio\Produto.class
 estoque\InventoryManagement.class
