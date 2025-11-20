@@ -174,6 +174,10 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
+        TelaCadastro tela = new TelaCadastro();
+        tela.setVisible(true);
+        this.dispose();  // fecha a tela atual (opcional)
+
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
