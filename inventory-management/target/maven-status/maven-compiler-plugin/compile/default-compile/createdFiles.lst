@@ -1,4 +1,5 @@
 negocio\EntradaEstoque.class
+persistencia\ProdutoDAO.class
 negocio\Fornecedor.class
 persistencia\BasicoDAO.class
 estoque\testes\TesteGeral.class
