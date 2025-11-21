@@ -8,7 +8,7 @@ public class TestaConexao {
         try {
             String url = "jdbc:mysql://localhost:3306/estoque_inventario";
             String user = "root";
-            String password = "1234";
+            String password = "59545799a";
 
             Connection conexao = DriverManager.getConnection(url, user, password);
 

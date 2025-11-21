@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package apresentacao;
+import java.awt.Color;
+import persistencia.FuncionarioDAO;
+import negocio.Funcionario;
 
 /**
  *
@@ -36,7 +39,8 @@ public class TelaLogin extends javax.swing.JFrame {
         btnCadastrar = new javax.swing.JButton();
         campoUsuario = new javax.swing.JTextField();
         campoSenha = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        subtitulo = new javax.swing.JLabel();
+        lblMensagem = new javax.swing.JLabel();
         txtTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +62,7 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.setText("entrar");
         btnEntrar.setMaximumSize(new java.awt.Dimension(78, 23));
         btnEntrar.setMinimumSize(new java.awt.Dimension(78, 23));
+        btnEntrar.addActionListener(this::btnEntrarActionPerformed);
 
         btnCadastrar.setBackground(new java.awt.Color(51, 51, 255));
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,40 +74,48 @@ public class TelaLogin extends javax.swing.JFrame {
 
         campoSenha.addActionListener(this::campoSenhaActionPerformed);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel1.setText("Controle de Estoque:");
+        subtitulo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        subtitulo.setText("Controle de Estoque:");
+
+        lblMensagem.setBackground(new java.awt.Color(204, 204, 204));
+        lblMensagem.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout panelDentroLoginLayout = new javax.swing.GroupLayout(panelDentroLogin);
         panelDentroLogin.setLayout(panelDentroLoginLayout);
         panelDentroLoginLayout.setHorizontalGroup(
             panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDentroLoginLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCadastrar)
-                .addGap(84, 84, 84))
-            .addGroup(panelDentroLoginLayout.createSequentialGroup()
                 .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelDentroLoginLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDentroLoginLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(subtitulo)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelDentroLoginLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelDentroLoginLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblMensagem))
+                            .addGroup(panelDentroLoginLayout.createSequentialGroup()
+                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(panelDentroLoginLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCadastrar)
+                .addGap(84, 84, 84))
         );
         panelDentroLoginLayout.setVerticalGroup(
             panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDentroLoginLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel1)
+                .addComponent(subtitulo)
                 .addGap(35, 35, 35)
                 .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,7 +124,9 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMensagem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCadastrar))
@@ -143,7 +158,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelDentroLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,6 +196,25 @@ public class TelaLogin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        String usuario = campoUsuario.getText();
+        String senha = campoSenha.getText();
+        //System.out.println(usuario);
+         //System.out.println(senha);
+        FuncionarioDAO dao = new FuncionarioDAO();
+        Funcionario funcionariologado = dao.buscarPorUsuarioESenha(usuario, senha);
+        if (funcionariologado != null){
+            lblMensagem.setText("");
+            TelaMenu menu = new TelaMenu();
+            menu.setVisible(true);
+            this.dispose();
+        }
+        else{
+            lblMensagem.setForeground(Color.RED);
+            lblMensagem.setText("usuario ou senha incorreto");
+            }
+    }//GEN-LAST:event_btnEntrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,9 +245,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnEntrar;
     private javax.swing.JTextField campoSenha;
     private javax.swing.JTextField campoUsuario;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblMensagem;
     private javax.swing.JPanel painelForaLogin;
     private javax.swing.JPanel panelDentroLogin;
+    private javax.swing.JLabel subtitulo;
     private javax.swing.JLabel txtSenha;
     private javax.swing.JLabel txtTitulo;
     private javax.swing.JLabel txtUsuario;
