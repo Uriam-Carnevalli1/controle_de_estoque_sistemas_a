@@ -67,7 +67,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         btnCadastrarproduto.setText("cadastrar:");
         btnCadastrarproduto.addActionListener(this::btnCadastrarprodutoActionPerformed);
 
-        btnDeleteProduto.setText("menu");
+        btnDeleteProduto.setText("voltar");
         btnDeleteProduto.addActionListener(this::btnDeleteProdutoActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -217,6 +217,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
     private void btnDeleteProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProdutoActionPerformed
         // TODO add your handling code here:
+        TelaMenu menu = new TelaMenu();  
+    menu.setVisible(true);           
+    this.dispose();   
     }//GEN-LAST:event_btnDeleteProdutoActionPerformed
 
     /**
