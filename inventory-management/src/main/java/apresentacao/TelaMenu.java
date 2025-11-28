@@ -46,6 +46,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnCadastroproduto.addActionListener(this::btnCadastroprodutoActionPerformed);
 
         btnLisraProduto.setText("Lista de produtos");
+        btnLisraProduto.addActionListener(this::btnLisraProdutoActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -118,6 +119,13 @@ public class TelaMenu extends javax.swing.JFrame {
         telaCadastro.setVisible(true);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastroprodutoActionPerformed
+
+    private void btnLisraProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLisraProdutoActionPerformed
+        // TODO add your handling code here:
+         TelaListar tela = new TelaListar(); 
+    tela.setVisible(true);               
+    this.dispose();
+    }//GEN-LAST:event_btnLisraProdutoActionPerformed
 
     /**
      * @param args the command line arguments
