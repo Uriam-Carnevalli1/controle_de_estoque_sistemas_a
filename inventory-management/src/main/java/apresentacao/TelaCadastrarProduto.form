@@ -44,7 +44,7 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="0" type="rgb"/>
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
       </Properties>
 
@@ -92,30 +92,34 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="65" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtPreco" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="txtEstoquep" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="lblDescricaoProduto" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnCadastrarproduto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="btnDeleteProduto" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtNomep" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="campoestoquep" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="campoNomep" alignment="0" pref="135" max="32767" attributes="0"/>
-                              <Component id="campoValorp" alignment="0" pref="135" max="32767" attributes="0"/>
-                              <Component id="campoDescricao" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtPreco" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtEstoquep" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblDescricaoProduto" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtNomep" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="campoestoquep" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="campoNomep" alignment="0" pref="135" max="32767" attributes="0"/>
+                                      <Component id="campoValorp" alignment="0" pref="135" max="32767" attributes="0"/>
+                                      <Component id="campoDescricao" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarproduto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -142,9 +146,12 @@
                           <Component id="campoestoquep" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtEstoquep" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarproduto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnCadastrarproduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,10 +190,18 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCadastrarproduto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="cadastrar"/>
+                <Property name="text" type="java.lang.String" value="cadastrar:"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarprodutoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnDeleteProduto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="menu"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteProdutoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
