@@ -5,10 +5,12 @@ persistencia\BasicoDAO.class
 estoque\testes\TesteGeral.class
 apresentacao\TelaCadastro.class
 persistencia\FuncionarioDAO.class
+apresentacao\TelaListar.class
 negocio\Funcionario.class
 estoque\InventoryManagement.class
 estoque\testes\TestaConexao.class
 apresentacao\TelaCadastrarProduto.class
+apresentacao\TelaListar$1.class
 apresentacao\TelaLogin.class
 apresentacao\TelaMenu.class
 persistencia\Conexao.class
