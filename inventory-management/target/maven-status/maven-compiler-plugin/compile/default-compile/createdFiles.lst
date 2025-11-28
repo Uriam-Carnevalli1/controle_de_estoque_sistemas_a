@@ -5,6 +5,7 @@ persistencia\ProdutoDAO.class
 negocio\Fornecedor.class
 persistencia\BasicoDAO.class
 estoque\testes\TesteGeral.class
+apresentacao\TelaListaFornecedores$1.class
 apresentacao\TelaCadastro.class
 persistencia\FuncionarioDAO.class
 apresentacao\TelaListar.class

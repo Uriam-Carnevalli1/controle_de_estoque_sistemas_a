@@ -48,23 +48,27 @@ public class TelaLogin extends javax.swing.JFrame {
 
         painelForaLogin.setBackground(new java.awt.Color(0, 0, 0));
 
-        panelDentroLogin.setBackground(new java.awt.Color(204, 204, 204));
+        panelDentroLogin.setBackground(new java.awt.Color(51, 51, 51));
         panelDentroLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        txtUsuario.setBackground(new java.awt.Color(51, 51, 51));
+        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setText("usuario :");
 
+        txtSenha.setBackground(new java.awt.Color(51, 51, 51));
+        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("senha :");
         txtSenha.setMaximumSize(new java.awt.Dimension(45, 16));
         txtSenha.setMinimumSize(new java.awt.Dimension(45, 16));
 
-        btnEntrar.setBackground(new java.awt.Color(51, 51, 255));
+        btnEntrar.setBackground(new java.awt.Color(0, 0, 0));
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("entrar");
         btnEntrar.setMaximumSize(new java.awt.Dimension(78, 23));
         btnEntrar.setMinimumSize(new java.awt.Dimension(78, 23));
         btnEntrar.addActionListener(this::btnEntrarActionPerformed);
 
-        btnCadastrar.setBackground(new java.awt.Color(51, 51, 255));
+        btnCadastrar.setBackground(new java.awt.Color(0, 0, 0));
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("cadastrar");
         btnCadastrar.addActionListener(this::btnCadastrarActionPerformed);
@@ -75,6 +79,7 @@ public class TelaLogin extends javax.swing.JFrame {
         campoSenha.addActionListener(this::campoSenhaActionPerformed);
 
         subtitulo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        subtitulo.setForeground(new java.awt.Color(255, 255, 255));
         subtitulo.setText("Controle de Estoque:");
 
         lblMensagem.setBackground(new java.awt.Color(204, 204, 204));
@@ -167,8 +172,8 @@ public class TelaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painelForaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(painelForaLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

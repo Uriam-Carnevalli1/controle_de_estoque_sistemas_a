@@ -52,21 +52,33 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
+        txtNomep.setBackground(new java.awt.Color(51, 51, 51));
+        txtNomep.setForeground(new java.awt.Color(255, 255, 255));
         txtNomep.setText("nome:");
 
+        txtPreco.setBackground(new java.awt.Color(51, 51, 51));
+        txtPreco.setForeground(new java.awt.Color(255, 255, 255));
         txtPreco.setText("preço:");
 
+        txtEstoquep.setBackground(new java.awt.Color(51, 51, 51));
+        txtEstoquep.setForeground(new java.awt.Color(255, 255, 255));
         txtEstoquep.setText("estoque min:");
 
         campoNomep.addActionListener(this::campoNomepActionPerformed);
 
+        lblDescricaoProduto.setBackground(new java.awt.Color(51, 51, 51));
+        lblDescricaoProduto.setForeground(new java.awt.Color(255, 255, 255));
         lblDescricaoProduto.setText("Descrição:");
 
+        btnCadastrarproduto.setBackground(new java.awt.Color(0, 0, 0));
+        btnCadastrarproduto.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrarproduto.setText("cadastrar:");
         btnCadastrarproduto.addActionListener(this::btnCadastrarprodutoActionPerformed);
 
+        btnDeleteProduto.setBackground(new java.awt.Color(0, 0, 0));
+        btnDeleteProduto.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteProduto.setText("voltar");
         btnDeleteProduto.addActionListener(this::btnDeleteProdutoActionPerformed);
 
