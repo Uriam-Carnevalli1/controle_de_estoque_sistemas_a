@@ -1,3 +1,5 @@
+apresentacao\TelaListaFornecedores.class
+persistencia\FornecedorDAO.class
 negocio\EntradaEstoque.class
 persistencia\ProdutoDAO.class
 negocio\Fornecedor.class
@@ -9,6 +11,7 @@ apresentacao\TelaListar.class
 negocio\Funcionario.class
 estoque\InventoryManagement.class
 estoque\testes\TestaConexao.class
+apresentacao\TelaCadastroFornecedor.class
 apresentacao\TelaCadastrarProduto.class
 apresentacao\TelaListar$1.class
 apresentacao\TelaLogin.class
