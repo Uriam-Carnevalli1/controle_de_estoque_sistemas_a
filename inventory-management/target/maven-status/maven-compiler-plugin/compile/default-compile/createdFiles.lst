@@ -12,6 +12,7 @@ apresentacao\TelaUsuarioListaFornecedores.class
 apresentacao\TelaCadastrarProduto.class
 apresentacao\TelaListar$1.class
 apresentacao\TelaLogin.class
+apresentacao\TelaEntradaEstoque$1.class
 apresentacao\TelaMenu.class
 apresentacao\TelaListaFornecedores.class
 persistencia\FornecedorDAO.class

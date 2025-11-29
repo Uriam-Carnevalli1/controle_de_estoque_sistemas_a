@@ -28,6 +28,40 @@ public class TelaEntradaEstoque extends javax.swing.JFrame {
         carregarProdutos();
         carregarFornecedores();
         CustoTotalText.setEditable(false);
+        jTextField4.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+        private void atualizarCusto() {
+            String texto = jTextField4.getText().trim();
+
+            if (texto.isEmpty()) {
+                CustoTotalText.setText("0");
+                return;
+            }
+
+            try {
+                int qtd = Integer.parseInt(texto);
+                int custo = qtd * 2; 
+                CustoTotalText.setText(String.valueOf(custo));
+            } catch (NumberFormatException e) {
+                CustoTotalText.setText("0");
+            }
+        }
+
+        @Override
+        public void insertUpdate(javax.swing.event.DocumentEvent e) {
+            atualizarCusto();
+        }
+
+        @Override
+        public void removeUpdate(javax.swing.event.DocumentEvent e) {
+            atualizarCusto();
+        }
+
+        @Override
+        public void changedUpdate(javax.swing.event.DocumentEvent e) {
+            atualizarCusto();
+        }
+    });
+        
         
     }
 
@@ -164,10 +198,11 @@ public class TelaEntradaEstoque extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
