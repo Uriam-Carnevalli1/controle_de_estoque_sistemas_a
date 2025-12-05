@@ -6,6 +6,7 @@ package apresentacao;
 import java.awt.Color;
 import persistencia.FuncionarioDAO;
 import negocio.Funcionario;
+import apresentacao.TelaMenuUsuario;
 
 /**
  *
@@ -41,6 +42,7 @@ public class TelaLogin extends javax.swing.JFrame {
         campoSenha = new javax.swing.JTextField();
         subtitulo = new javax.swing.JLabel();
         lblMensagem = new javax.swing.JLabel();
+        BtnCliente = new javax.swing.JButton();
         txtTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,6 +87,11 @@ public class TelaLogin extends javax.swing.JFrame {
         lblMensagem.setBackground(new java.awt.Color(204, 204, 204));
         lblMensagem.setForeground(new java.awt.Color(255, 0, 0));
 
+        BtnCliente.setBackground(new java.awt.Color(0, 0, 0));
+        BtnCliente.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCliente.setText("cliente");
+        BtnCliente.addActionListener(this::BtnClienteActionPerformed);
+
         javax.swing.GroupLayout panelDentroLoginLayout = new javax.swing.GroupLayout(panelDentroLogin);
         panelDentroLogin.setLayout(panelDentroLoginLayout);
         panelDentroLoginLayout.setHorizontalGroup(
@@ -113,8 +120,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnCliente)
+                .addGap(27, 27, 27)
                 .addComponent(btnCadastrar)
-                .addGap(84, 84, 84))
+                .addGap(75, 75, 75))
         );
         panelDentroLoginLayout.setVerticalGroup(
             panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +143,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(panelDentroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadastrar))
+                    .addComponent(btnCadastrar)
+                    .addComponent(BtnCliente))
                 .addGap(44, 44, 44))
         );
 
@@ -220,6 +230,15 @@ public class TelaLogin extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
+    private void BtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClienteActionPerformed
+        // TODO add your handling code here:
+          TelaMenuUsuario tela = new TelaMenuUsuario();
+    tela.setVisible(true);
+
+    // Fecha a tela atual (TelaLogin)
+    this.dispose();
+    }//GEN-LAST:event_BtnClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -246,6 +265,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnCliente;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JTextField campoSenha;
