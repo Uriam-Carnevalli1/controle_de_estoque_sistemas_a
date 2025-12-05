@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package apresentacao;
+import apresentacao.TelaLogin;
 
 /**
  *
@@ -34,6 +35,7 @@ public class TelaMenuUsuario extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        BtnRetornLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,21 +85,31 @@ public class TelaMenuUsuario extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("MINI GAME");
 
+        BtnRetornLogin.setBackground(new java.awt.Color(0, 0, 0));
+        BtnRetornLogin.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        BtnRetornLogin.setForeground(new java.awt.Color(255, 255, 255));
+        BtnRetornLogin.setText("LOGIN");
+        BtnRetornLogin.addActionListener(this::BtnRetornLoginActionPerformed);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(BtnRetornLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jButton2)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(BtnRetornLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -129,7 +141,7 @@ public class TelaMenuUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,6 +174,15 @@ public class TelaMenuUsuario extends javax.swing.JFrame {
     dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void BtnRetornLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRetornLoginActionPerformed
+        // TODO add your handling code here:
+         TelaLogin telaLogin = new TelaLogin();
+    telaLogin.setVisible(true);
+
+    // Fecha a tela atual (TelaMenuUsuario)
+    this.dispose();
+    }//GEN-LAST:event_BtnRetornLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -188,6 +209,7 @@ public class TelaMenuUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnRetornLogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

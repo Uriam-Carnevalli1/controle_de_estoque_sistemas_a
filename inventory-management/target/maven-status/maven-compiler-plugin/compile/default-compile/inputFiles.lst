@@ -1,6 +1,7 @@
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaCadastrarProduto.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaCadastro.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaCadastroFornecedor.java
+C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaEntradaEstoque.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaListaFornecedores.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaListar.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\apresentacao\TelaListaUsuario.java
@@ -17,6 +18,7 @@ C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inv
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\negocio\Produto.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\BasicoDAO.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\Conexao.java
+C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\EntradaEstoqueDAO.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\FornecedorDAO.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\FuncionarioDAO.java
 C:\Users\Otávio\Desktop\caaracteristica_proj\controle_de_estoque_sistemas_a\inventory-management\src\main\java\persistencia\ProdutoDAO.java

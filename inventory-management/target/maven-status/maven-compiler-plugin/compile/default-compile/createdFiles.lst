@@ -3,6 +3,7 @@ persistencia\ProdutoDAO.class
 persistencia\BasicoDAO.class
 estoque\testes\TesteGeral.class
 apresentacao\TelaListaUsuario.class
+apresentacao\TelaEntradaEstoque.class
 persistencia\FuncionarioDAO.class
 apresentacao\TelaListar.class
 negocio\Funcionario.class
@@ -11,7 +12,9 @@ apresentacao\TelaUsuarioListaFornecedores.class
 apresentacao\TelaCadastrarProduto.class
 apresentacao\TelaListar$1.class
 apresentacao\TelaLogin.class
+apresentacao\TelaEntradaEstoque$1.class
 apresentacao\TelaMenu.class
+persistencia\EntradaEstoqueDAO.class
 apresentacao\TelaListaFornecedores.class
 persistencia\FornecedorDAO.class
 apresentacao\TelaMenuUsuario.class
