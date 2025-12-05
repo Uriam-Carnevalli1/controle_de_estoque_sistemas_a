@@ -64,6 +64,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setMinimumSize(new java.awt.Dimension(45, 16));
 
         btnEntrar.setBackground(new java.awt.Color(0, 0, 0));
+        btnEntrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("entrar");
         btnEntrar.setMaximumSize(new java.awt.Dimension(78, 23));
@@ -71,6 +72,7 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.addActionListener(this::btnEntrarActionPerformed);
 
         btnCadastrar.setBackground(new java.awt.Color(0, 0, 0));
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("cadastrar");
         btnCadastrar.addActionListener(this::btnCadastrarActionPerformed);
@@ -88,6 +90,7 @@ public class TelaLogin extends javax.swing.JFrame {
         lblMensagem.setForeground(new java.awt.Color(255, 0, 0));
 
         BtnCliente.setBackground(new java.awt.Color(0, 0, 0));
+        BtnCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         BtnCliente.setForeground(new java.awt.Color(255, 255, 255));
         BtnCliente.setText("cliente");
         BtnCliente.addActionListener(this::BtnClienteActionPerformed);
@@ -118,10 +121,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap(92, Short.MAX_VALUE))
             .addGroup(panelDentroLoginLayout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnCliente)
-                .addGap(27, 27, 27)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnCadastrar)
                 .addGap(75, 75, 75))
         );
@@ -173,7 +176,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelDentroLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
