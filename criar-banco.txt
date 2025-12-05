@@ -1,0 +1,92 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema estoque_inventario
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema estoque_inventario
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `estoque_inventario` DEFAULT CHARACTER SET utf8 ;
+USE `estoque_inventario` ;
+
+-- -----------------------------------------------------
+-- Table `estoque_inventario`.`funcionario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estoque_inventario`.`funcionario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estoque_inventario`.`fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estoque_inventario`.`fornecedor` (
+  `id` INT NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `telefone` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `cidade` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estoque_inventario`.`produto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estoque_inventario`.`produto` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `descricao` VARCHAR(255) NULL,
+  `quantidade` INT NOT NULL,
+  `preco` DECIMAL(10,2) NOT NULL,
+  `estoque_minimo` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estoque_inventario`.`entrada_estoque`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estoque_inventario`.`entrada_estoque` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idProduto` INT NOT NULL,
+  `idFornecedor` INT NOT NULL,
+  `idFuncionario` INT NOT NULL,
+  `data` DATETIME NOT NULL,
+  `quantidade` INT NOT NULL,
+  `custo_total` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_entrada_produto_idx` (`idProduto` ASC) VISIBLE,
+  INDEX `fk_entrada_fornecedor_idx` (`idFornecedor` ASC) VISIBLE,
+  INDEX `fk_entrada_funcionario_idx` (`idFuncionario` ASC) VISIBLE,
+  CONSTRAINT `fk_entrada_produto`
+    FOREIGN KEY (`idProduto`)
+    REFERENCES `estoque_inventario`.`produto` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_entrada_fornecedor`
+    FOREIGN KEY (`idFornecedor`)
+    REFERENCES `estoque_inventario`.`fornecedor` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_entrada_funcionario`
+    FOREIGN KEY (`idFuncionario`)
+    REFERENCES `estoque_inventario`.`funcionario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

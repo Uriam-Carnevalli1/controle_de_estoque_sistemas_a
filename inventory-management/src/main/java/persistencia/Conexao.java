@@ -17,7 +17,7 @@ public class Conexao {
 
     private static final String URL = "jdbc:mysql://localhost:3306/estoque_inventario";
     private static final String USER = "root";
-    private static final String PASSWORD = "59545799a";
+    private static final String PASSWORD = "1234";
  
 
     public static Connection getConnection() throws SQLException {
