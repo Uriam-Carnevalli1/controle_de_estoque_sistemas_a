@@ -59,6 +59,21 @@ public class ProdutoDAO implements BasicoDAO {
             throw new RuntimeException("Erro ao atualizar produto", e);
         }
     }
+    public void adicionarEstoque(int idProduto, int quantidadeAdicionar) {
+    String sql = "UPDATE produto SET quantidade = quantidade + ? WHERE id = ?";
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, quantidadeAdicionar);
+        stmt.setInt(2, idProduto);
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao adicionar estoque", e);
+    }
+}
+
 
     @Override
     public void deletar(int id) {
@@ -147,4 +162,32 @@ public class ProdutoDAO implements BasicoDAO {
             throw new RuntimeException("Erro ao buscar produto por nome", e);
         }
     }
+    public List<Produto> listarProdutosAbaixoDoEstoque() {
+    String sql = "SELECT * FROM produto WHERE quantidade < estoque_minimo";
+    List<Produto> lista = new ArrayList<>();
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            Produto p = new Produto(
+                rs.getInt("id"),
+                rs.getString("nome"),
+                rs.getString("descricao"),
+                rs.getInt("quantidade"),
+                rs.getDouble("preco"),
+                rs.getInt("estoque_minimo")
+            );
+
+            lista.add(p);
+        }
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao listar produtos abaixo do estoque mínimo", e);
+    }
+
+    return lista;
+}
+
 }
