@@ -40,6 +40,34 @@ public class EntradaEstoqueDAO {
         }
     }
 
+    public void registrarEntrada(
+        int idProduto,
+        int idFornecedor,
+        int idFuncionario,
+        int quantidade,
+        double custoTotal
+) {
+
+    String sql = "INSERT INTO entrada_estoque "
+               + "(idProduto, idFornecedor, idFuncionario, data, quantidade, custo_total) "
+               + "VALUES (?, ?, ?, NOW(), ?, ?)";
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, idProduto);
+        stmt.setInt(2, idFornecedor);
+        stmt.setInt(3, idFuncionario);
+        stmt.setInt(4, quantidade);
+        stmt.setDouble(5, custoTotal);
+
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao registrar entrada de estoque", e);
+    }
+}
+
     // ------------------------------------------
     // LISTAR TODAS AS ENTRADAS
     // ------------------------------------------

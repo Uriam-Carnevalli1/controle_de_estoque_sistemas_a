@@ -1,3 +1,4 @@
+apresentacao\TelaRelatorio.class
 negocio\EntradaEstoque.class
 persistencia\ProdutoDAO.class
 persistencia\BasicoDAO.class
