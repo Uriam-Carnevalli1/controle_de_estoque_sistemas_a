@@ -85,6 +85,7 @@ public class Produto {
     // Método útil pra debugar
     @Override
     public String toString() {
-        return nome + " (Qtd: " + quantidade + ", Preço: " + preco + ")";
+        return nome;
     }
 }
+    

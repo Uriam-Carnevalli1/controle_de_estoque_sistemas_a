@@ -8,6 +8,8 @@ import java.awt.Color;
 import persistencia.FuncionarioDAO;
 import negocio.Funcionario;
 import apresentacao.TelaMenuUsuario;
+import negocio.SessaoUsuario;
+
 
 /**
  *
@@ -232,6 +234,7 @@ public class TelaLogin extends javax.swing.JFrame {
         FuncionarioDAO dao = new FuncionarioDAO();
         Funcionario funcionariologado = dao.buscarPorUsuarioESenha(usuario, senha);
         if (funcionariologado != null){
+            SessaoUsuario.setFuncionarioLogado(funcionariologado);
             lblMensagem.setText("");
             TelaMenu menu = new TelaMenu();
             menu.setVisible(true);

@@ -148,6 +148,9 @@ private void carregarTabela(List<Produto> produtos) {
 
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
         // TODO add your handling code here:
+        TelaMenu tela = new TelaMenu(); // cria a tela do menu
+    tela.setVisible(true);          // exibe o menu
+    this.dispose();
     }//GEN-LAST:event_BtnVoltarActionPerformed
 
     /**

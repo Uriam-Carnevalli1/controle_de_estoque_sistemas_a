@@ -9,11 +9,11 @@ persistencia\FuncionarioDAO.class
 apresentacao\TelaListar.class
 negocio\Funcionario.class
 estoque\testes\TestaConexao.class
+negocio\SessaoUsuario.class
 apresentacao\TelaUsuarioListaFornecedores.class
 apresentacao\TelaCadastrarProduto.class
 apresentacao\TelaListar$1.class
 apresentacao\TelaLogin.class
-apresentacao\TelaEntradaEstoque$1.class
 apresentacao\TelaMenu.class
 persistencia\EntradaEstoqueDAO.class
 apresentacao\TelaListaFornecedores.class
