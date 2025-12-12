@@ -43,7 +43,7 @@
     <build>
 
         <!-- Nome do executável final -->
-        <finalName>executavel</finalName>
+        <finalName>Inventory-managment</finalName>
 
         <plugins>
 
