@@ -41,7 +41,6 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -60,11 +59,6 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("DELETE:");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("MENU:");
@@ -78,9 +72,7 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton2)
                 .addGap(20, 20, 20))
         );
         jPanel2Layout.setVerticalGroup(
@@ -88,9 +80,7 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
+                        .addGap(80, 80, 80)
                         .addComponent(jButton2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -147,37 +137,6 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-          int index = jList1.getSelectedIndex();
-
-    if (index == -1) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Selecione um fornecedor para deletar!");
-        return;
-    }
-
-    Fornecedor selecionado = fornecedores.get(index);
-
-    // Confirmação
-    int escolha = javax.swing.JOptionPane.showConfirmDialog(
-            this,
-            "Deseja realmente deletar o fornecedor: " + selecionado.getNome() + "?",
-            "Confirmar exclusão",
-            javax.swing.JOptionPane.YES_NO_OPTION
-    );
-
-    if (escolha == javax.swing.JOptionPane.YES_OPTION) {
-        FornecedorDAO dao = new FornecedorDAO();
-        dao.deletar(selecionado.getId());
-
-        javax.swing.JOptionPane.showMessageDialog(this,
-                "Fornecedor deletado com sucesso!");
-
-        carregarLista(); // atualizar lista
-    }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -217,7 +176,6 @@ public class TelaListaFornecedores extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;

@@ -73,7 +73,6 @@ public class TelaListar extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        BtnDelete = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,7 +93,7 @@ public class TelaListar extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "id", "nome", "descrição", "preço", "estoque_minimo"
+                "id", "nome", "descrição", "quantidade", "preço"
             }
         ) {
             Class[] types = new Class [] {
@@ -110,9 +109,6 @@ public class TelaListar extends javax.swing.JFrame {
         jButton1.setText("voltar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        BtnDelete.setText("delete");
-        BtnDelete.addActionListener(this::BtnDeleteActionPerformed);
-
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,19 +119,16 @@ public class TelaListar extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnDelete)
-                .addGap(111, 111, 111))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(181, 181, 181)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addComponent(jButton1)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -145,11 +138,9 @@ public class TelaListar extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnDelete)
-                    .addComponent(jButton1))
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,37 +165,6 @@ public class TelaListar extends javax.swing.JFrame {
     this.dispose();                  
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeleteActionPerformed
-        // TODO add your handling code here:
-        int linhaSelecionada = jTable1.getSelectedRow();
-
-    if (linhaSelecionada == -1) {
-        JOptionPane.showMessageDialog(null, "Selecione um produto para deletar!");
-        return;
-    }
-
-  
-    int id = (int) jTable1.getValueAt(linhaSelecionada, 0);
-
- 
-    int resposta = JOptionPane.showConfirmDialog(
-            null,
-            "Tem certeza que deseja excluir o produto ID " + id + "?",
-            "Confirmar exclusão",
-            JOptionPane.YES_NO_OPTION
-    );
-
-    if (resposta == JOptionPane.YES_OPTION) {
-        ProdutoDAO dao = new ProdutoDAO();
-        dao.deletar(id);
-
-        JOptionPane.showMessageDialog(null, "Produto removido com sucesso!");
-
-      
-        carregarTabelaProdutos();
-    }
-    }//GEN-LAST:event_BtnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,7 +192,6 @@ public class TelaListar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnDelete;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
